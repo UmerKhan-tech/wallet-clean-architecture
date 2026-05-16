@@ -31,5 +31,16 @@ namespace Wallet.Api.Controllers
         {
             return Ok(_service.Get(id));
         }
+
+        [HttpGet("cicd-test")]
+        public IActionResult CicdTest()
+        {
+            return Ok(new
+            {
+                message = "CI/CD pipeline is working 🚀",
+                time = DateTime.UtcNow,
+                status = "success"
+            });
+        }
     }
 }
